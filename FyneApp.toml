@@ -1,0 +1,8 @@
+Website = "https://example.com"
+
+[Details]
+  Icon = "Icon.png"
+  Name = "Samples4web"
+  ID = "com.samples4web.app"
+  Version = "1.0.0"
+  Build = 5

@@ -1,0 +1,13 @@
+{
+    "_base": "https://shabda.ndre.gr/",
+    "blue": [
+        "samples/blue/blue_0.wav",
+        "samples/blue/blue_1.wav",
+        "samples/blue/blue_2.wav"
+    ],
+    "red": [
+        "samples/red/red_0.wav",
+        "samples/red/red_1.wav",
+        "samples/red/red_2.wav"
+    ]
+}

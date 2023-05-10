@@ -1,0 +1,38 @@
+[
+    {
+        "bank": "blue",
+        "n": 0,
+        "type": "audio",
+        "url": "samples/blue/blue_0.wav"
+    },
+    {
+        "bank": "blue",
+        "n": 1,
+        "type": "audio",
+        "url": "samples/blue/blue_1.wav"
+    },
+    {
+        "bank": "blue",
+        "n": 2,
+        "type": "audio",
+        "url": "samples/blue/blue_2.wav"
+    },
+    {
+        "bank": "red",
+        "n": 0,
+        "type": "audio",
+        "url": "samples/red/red_0.wav"
+    },
+    {
+        "bank": "red",
+        "n": 1,
+        "type": "audio",
+        "url": "samples/red/red_1.wav"
+    },
+    {
+        "bank": "red",
+        "n": 2,
+        "type": "audio",
+        "url": "samples/red/red_2.wav"
+    }
+]
