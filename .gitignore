@@ -2,3 +2,5 @@ SDKs/
 fyne-cross/
 samples4web
 Samples4web.tar.xz
+Samples4web.app
+*.dmg

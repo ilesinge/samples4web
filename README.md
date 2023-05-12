@@ -3,15 +3,28 @@ Build and package
 
 Install and run Docker
 
+go install fyne.io/fyne/v2/cmd/fyne@latest
+
+# Windows (from Linux)
+
 go install github.com/fyne-io/fyne-cross@latest
-# Windows
 fyne-cross windows
-# Linux
+
+# Windows (from Windows)
+
+
+
+# Linux (from Linux)
+
 fyne package -os linux -icon Icon.png
 fyne build
-# MacOS
-Download https://developer.apple.com/download/all/?q=Command%20Line%20Tools
-fyne-cross darwin-sdk-extract --xcode-path ~/Bureau/Command_Line_Tools_for_Xcode_14.3.dmg
+
+# MacOS (from MacOS)
+
+npm install --global create-dmg
+
+fyne package -os darwin -icon Icon.png
+create-dmg Samples4web.app
 
 Release
 -------
