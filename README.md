@@ -1,32 +1,46 @@
-# Build and package
+# Samples4web
+
+Samples4web is a simple tool for music livecoders to expose their audio samples on the web (for [Estuary](https://github.com/dktr0/estuary) and [Strudel](https://strudel.tidalcycles.org/) platforms).
+
+It does it by either:
+- Generating a JSON file listing your samples, to be hosted somewhere on the Web (e.g. GitHub Pages)
+- Exposing your samples directly through a temporary local webserver
+
+## Use
+
+Download and install the tool for your platform (Linux/MacOS/Windows) from the release page: https://github.com/ilesinge/samples4web/releases/
+
+(Usage docs to complete)
+
+## Build and package
 
 Install and run Docker
 
     go install fyne.io/fyne/v2/cmd/fyne@latest
 
-## Windows (from Linux)
+### Windows (from Linux)
 
     go install github.com/fyne-io/fyne-cross@latest
     fyne-cross windows
 
-## Windows (from Windows)
+### Windows (from Windows)
 
     fyne package -os windows -icon Icon.png
 	
 
-## Linux (from Linux)
+### Linux (from Linux)
 
     fyne package -os linux -icon Icon.png
     fyne build
 
-## MacOS (from MacOS)
+### MacOS (from MacOS)
 
     npm install --global create-dmg
 
     fyne package -os darwin -icon Icon.png
     create-dmg Samples4web.app
 
-# Release
+## Release
 
 Create github release
 
@@ -34,8 +48,8 @@ Create github release
     gh release upload v0.1.0 Samples4web.tar.xz
     gh release upload v0.1.0 fyne-cross/bin/windows-amd64/Samples4web.exe
 
-# Roadmap
+## Roadmap
 
-Improve and automate with Github Actions:
-
-https://github.com/wolfgangasdf/gocalcapp/blob/master/.github/workflows/go.yml
+- Add a help section
+- Improve design
+- Improve and automate release with Github Actions: https://github.com/wolfgangasdf/gocalcapp/blob/master/.github/workflows/go.yml
