@@ -1,5 +1,7 @@
 # Samples4web
 
+![Samples4web logo](https://raw.githubusercontent.com/ilesinge/samples4web/master/Logo.png)
+
 Samples4web is a simple tool for music livecoders to expose their audio samples on the web (for [Estuary](https://github.com/dktr0/estuary) and [Strudel](https://strudel.tidalcycles.org/) platforms).
 
 It does it by either:
@@ -12,35 +14,37 @@ Download and install the tool for your platform (Linux/MacOS/Windows) from the r
 
 (Usage docs to complete)
 
-## Build and package
+## Hack
+
+### Build and package
 
 Install and run Docker
 
     go install fyne.io/fyne/v2/cmd/fyne@latest
 
-### Windows (from Linux)
+#### Windows (from Linux)
 
     go install github.com/fyne-io/fyne-cross@latest
     fyne-cross windows
 
-### Windows (from Windows)
+#### Windows (from Windows)
 
     fyne package -os windows -icon Icon.png
 	
 
-### Linux (from Linux)
+#### Linux (from Linux)
 
     fyne package -os linux -icon Icon.png
     fyne build
 
-### MacOS (from MacOS)
+#### MacOS (from MacOS)
 
     npm install --global create-dmg
 
     fyne package -os darwin -icon Icon.png
     create-dmg Samples4web.app
 
-## Release
+### Release
 
 Create github release
 
@@ -50,6 +54,7 @@ Create github release
 
 ## Roadmap
 
+- Add a screenshot to the README
 - Add a help section
 - Improve design
 - Improve and automate release with Github Actions: https://github.com/wolfgangasdf/gocalcapp/blob/master/.github/workflows/go.yml
