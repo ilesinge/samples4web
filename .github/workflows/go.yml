@@ -42,11 +42,18 @@ jobs:
         run: |
           go generate -v
           $HOME/go/bin/fyne package -icon Icon.png
+          fyne build
           mv Samples4web.tar.xz Samples4web-linux.tar.xz
+          mv samples4web samples4web-linux
       - name: Upload package
         uses: actions/upload-artifact@v2
         with:
           name: 'Samples4web-linux.tar.xz'
+          path: '.'
+      - name: Upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'samples4web-linux'
           path: '.'
       - name: Add to release
         uses: actions/upload-release-asset@v1
@@ -57,6 +64,15 @@ jobs:
           asset_path: ./Samples4web-linux.tar.xz
           asset_name: Samples4web-linux.tar.xz
           asset_content_type: application/x-tar
+      - name: Add to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ./samples4web-linux
+          asset_name: samples4web-linux
+          asset_content_type: application/octet-stream
 
   package-windows:
     needs: create-release
