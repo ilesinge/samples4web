@@ -71,7 +71,7 @@ func generateStrudelJSON(folderPath string, samples []BaseSample, baseURL string
 	}
 	for _, sample := range samples {
 		samplename := sample.Bank
-		relativePath := strings.TrimPrefix(sample.Path, folderPath+"/")
+		relativePath := strings.TrimPrefix(filepath.ToSlash(sample.Path), folderPath+"/")
 		if assets[samplename] == nil {
 			assets[samplename] = []string{}
 		}
@@ -86,7 +86,7 @@ func generateEstuaryJSON(folderPath string, samples []BaseSample) error {
 	assets := []EstuarySample{}
 	sampleNumber := map[string]int{}
 	for _, sample := range samples {
-		relativePath := strings.TrimPrefix(sample.Path, folderPath+"/")
+		relativePath := strings.TrimPrefix(filepath.ToSlash(sample.Path), folderPath+"/")
 		samplename := sample.Bank
 		estuarysample := EstuarySample{
 			Bank:   samplename,
