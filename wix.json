@@ -6,7 +6,7 @@
     "files": {
       "guid": "",
       "items": [
-        "Samples4web.exe"
+        "bin/Samples4web.exe"
       ]
     },
     "directories": [

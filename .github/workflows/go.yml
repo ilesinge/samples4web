@@ -107,6 +107,19 @@ jobs:
         with:
           name: 'Samples4web-windows.zip'
           path: '.'
+      - name: Copy exe file
+        run: cp Samples4web.exe Samples4web-windows.exe
+      - name: Upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'Samples4web-windows.exe'
+          path: '.'
+      - name: Prepare MSI step folder structure
+        run: |
+          mkdir application
+          cp Samples4web.exe application/Samples4web.exe
+          cp LICENSE application/LICENSE
+          cp Icon.ico application/Icon.ico
       - name: Build Windows Installer MSI from exe file
         uses: AliceOh/CreateWindowsInstaller@1.0.0
         with:
@@ -127,6 +140,15 @@ jobs:
           asset_path: ./Samples4web-windows.zip
           asset_name: Samples4web-windows.zip
           asset_content_type: application/zip
+      - name: Add to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ./Samples4web-windows.exe
+          asset_name: Samples4web-windows.exe
+          asset_content_type: application/octet-stream
       - name: Add to release
         uses: actions/upload-release-asset@v1
         env:
