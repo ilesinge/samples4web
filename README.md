@@ -18,11 +18,13 @@ Download and install the tool for your platform (Linux/MacOS/Windows) from the r
 
 ### Build and package
 
-Install and run Docker
+Install Fyne prerequisites: https://developer.fyne.io/started/
 
     go install fyne.io/fyne/v2/cmd/fyne@latest
 
 #### Windows (from Linux)
+
+Install and run Docker
 
     go install github.com/fyne-io/fyne-cross@latest
     fyne-cross windows
