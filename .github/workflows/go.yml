@@ -119,7 +119,10 @@ jobs:
           go generate -v
           $HOME/go/bin/fyne package -icon Icon.png
       - name: Create DMG
+        continue-on-error: true
         run: create-dmg Samples4web.app
+      - name: Rename DMG
+        run: mv Samples4web.dmg Samples4web-mac.dmg
       - name: Zip Release
         uses: TheDoctor0/zip-release@main
         with:
@@ -131,6 +134,11 @@ jobs:
         with:
           name: 'Samples4web-mac.zip'
           path: '.'
+      - name: Upload DMG
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'Samples4web-mac.dmg'
+          path: '.'
       - name: Add to release
         uses: actions/upload-release-asset@v1
         env:
@@ -140,3 +148,12 @@ jobs:
           asset_path: ./Samples4web-mac.zip
           asset_name: Samples4web-mac.zip
           asset_content_type: application/zip
+      - name: Add to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ./Samples4web-mac.dmg
+          asset_name: Samples4web-mac.dmg
+          asset_content_type: application/octet-stream
