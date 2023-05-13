@@ -57,6 +57,7 @@ Create github release
 ## Roadmap
 
 - Add a screenshot to the README
+- Allow to change the webserver port
 - Add a help section
 - Improve design
 - Improve and automate release with Github Actions: https://github.com/wolfgangasdf/gocalcapp/blob/master/.github/workflows/go.yml
