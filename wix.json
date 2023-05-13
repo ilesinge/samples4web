@@ -1,0 +1,47 @@
+{
+    "product": "Samples4web",
+    "company": "ilesinge",
+    "license": "LICENSE",
+    "upgrade-code": "",
+    "files": {
+      "guid": "",
+      "items": [
+        "Samples4web.exe"
+      ]
+    },
+    "directories": [
+    ],
+    "env": {
+      "guid": "",
+      "vars": [
+        {
+          "name": "PATH",
+          "value": "[INSTALLDIR]",
+          "permanent": "no",
+          "system": "no",
+          "action": "set",
+          "part": "last"
+        }
+      ]
+    },
+    "shortcuts": {
+      "guid": "",
+      "items": [
+        {
+          "name": "Samples4web",
+          "description": "Samples4web Livecoding Tool",
+          "target": "[INSTALLDIR]\\Samples4web.exe",
+          "wdir": "INSTALLDIR",
+          "icon":"Icon.ico"
+        }
+      ]
+    },
+    "hooks": [
+    ],
+    "choco": {
+      "description": "Samples4web program",
+      "project-url": "https://github.com/ilesinge/samples4web",
+      "tags": "livecoding",
+      "license-url": "https://github.com/ilesinge/samples4web/blob/main/LICENSE"
+    }
+  }
