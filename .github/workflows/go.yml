@@ -121,10 +121,8 @@ jobs:
       - name: Create DMG
         continue-on-error: true
         run: create-dmg Samples4web.app
-      - name: List files
-        run: ls
       - name: Rename DMG
-        run: mv Samples4web.dmg Samples4web-mac.dmg
+        run: mv "Samples4web 1.0.0.dmg" Samples4web-mac.dmg
       - name: Zip Release
         uses: TheDoctor0/zip-release@main
         with:
