@@ -1,6 +1,6 @@
 # Samples4web
 
-![Samples4web logo](https://raw.githubusercontent.com/ilesinge/samples4web/master/Logo.png)
+![Samples4web logo](https://raw.githubusercontent.com/ilesinge/samples4web/main/Logo.png)
 
 Samples4web is a simple tool for music livecoders to expose their audio samples on the web (for [Estuary](https://github.com/dktr0/estuary) and [Strudel](https://strudel.tidalcycles.org/) platforms).
 
@@ -11,6 +11,8 @@ It does it by either:
 ## Use
 
 Download and install the tool for your platform (Linux/MacOS/Windows) from the release page: https://github.com/ilesinge/samples4web/releases/
+
+![Samples4web screenshot](https://raw.githubusercontent.com/ilesinge/samples4web/main/Screenshot.png)
 
 (Usage docs to complete)
 
