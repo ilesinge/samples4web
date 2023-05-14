@@ -63,34 +63,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install native deps
-        run: |
-          choco install msys2
-      - name: Install Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.18
-      - name: Install Fyne CLI
-        run: |
-          go install fyne.io/fyne/v2/cmd/fyne@latest
-          Start-Process -PSPath "$HOME\go\bin\fyne.exe" -ArgumentList "version" -NoNewWindow -Wait
-      - name: Install go-msi
-        run: choco install -y "go-msi"
-      - name: Fyne Package
-        run: |
-          go generate -v
-          Start-Process -PSPath "$HOME\go\bin\fyne.exe" -ArgumentList "package -icon Icon.png" -NoNewWindow -Wait
-      # - name: Zip Release
-      #   uses: TheDoctor0/zip-release@main
-      #   with:
-      #     type: 'zip'
-      #     filename: 'Samples4web-windows.zip'
-      #     path: 'Samples4web.exe'
-      # - name: Upload package
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: 'Samples4web-windows.zip'
-      #     path: '.'
+      - name: Build Windows
+        uses: ilesinge/FyneBuildActions/windows@v1
       - name: Copy exe file
         run: cp Samples4web.exe Samples4web-windows.exe
       - name: Upload package
@@ -98,6 +72,8 @@ jobs:
         with:
           name: 'Samples4web-windows.exe'
           path: '.'
+      - name: Install go-msi
+        run: choco install -y "go-msi"
       - name: Prepare MSI step folder structure
         run: |
           mkdir application
@@ -115,15 +91,6 @@ jobs:
         with:
           name: 'Samples4web-windows.msi'
           path: '.'
-      # - name: Add to release
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ needs.create-release.outputs.upload_url }}
-      #     asset_path: ./Samples4web-windows.zip
-      #     asset_name: Samples4web-windows.zip
-      #     asset_content_type: application/zip
       - name: Add to release
         uses: actions/upload-release-asset@v1
         env:

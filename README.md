@@ -60,4 +60,5 @@ Create github release
 - Allow to change the webserver port
 - Add a help section
 - Improve design
-- Improve and automate release with Github Actions: https://github.com/wolfgangasdf/gocalcapp/blob/master/.github/workflows/go.yml
+- Sign the MSI: https://github.com/marketplace/actions/code-sign-a-file-with-pfx-certificate
+- Notarize the DMG: https://federicoterzi.com/blog/automatic-code-signing-and-notarization-for-macos-apps-using-github-actions/
