@@ -115,7 +115,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build Windows
+      - name: Build MacOS version
         uses: ilesinge/FyneBuildActions/macos@v1
       - name: Install create-dmg
         run: npm install --global create-dmg
