@@ -10,51 +10,30 @@ It does it by either:
 
 ## Use
 
-Download and install the tool for your platform (Linux/MacOS/Windows) from the release page: https://github.com/ilesinge/samples4web/releases/
+- Download and install the tool for your platform (Linux/MacOS/Windows) from the [release page](https://github.com/ilesinge/samples4web/releases/) 
+  - Caveat: on Windows, the MSI is not signed yet, so it may trigger when installing.
+
+- Launch the app
 
 ![Samples4web screenshot](https://raw.githubusercontent.com/ilesinge/samples4web/main/Screenshot.png)
 
-(Usage docs to complete)
+- If you want to host your samples elsewhere (such as GitHub Pages) and you target Strudel, fill the "Base URL" field with the target host URL
+- Pick the folder containing the samples you want to expose
+- Click on the "Save JSON" button
+  - You are now ready to host your files somewhere, including the strudel.json and estuary.json files generated in the chosen folder
+- If you want to play with your samples locally, click the "Start local webserver" button
+- The samples and the JSON files are now exposed on http://localhost:3000/
 
 ## Hack
 
-### Build and package
-
-Install Fyne prerequisites: https://developer.fyne.io/started/
-
-    go install fyne.io/fyne/v2/cmd/fyne@latest
-
-#### Windows (from Linux)
-
-Install and run Docker
-
-    go install github.com/fyne-io/fyne-cross@latest
-    fyne-cross windows
-
-#### Windows (from Windows)
-
-    fyne package -os windows -icon Icon.png
-	
-
-#### Linux (from Linux)
-
-    fyne package -os linux -icon Icon.png
-    fyne build
-
-#### MacOS (from MacOS)
-
-    npm install --global create-dmg
-
-    fyne package -os darwin -icon Icon.png
-    create-dmg Samples4web.app
-
-### Release
-
-Create github release
-
-    gh release upload v0.1.0 samples4web
-    gh release upload v0.1.0 Samples4web.tar.xz
-    gh release upload v0.1.0 fyne-cross/bin/windows-amd64/Samples4web.exe
+- Install Go: https://go.dev/doc/install
+- Install Fyne prerequisites: https://developer.fyne.io/started/
+- Install Fyne: `go install fyne.io/fyne/v2/cmd/fyne@latest`
+- Run the app: `go run main.go`
+- Build the app:
+  - `fyne build` to generate the barebones binary
+  - `fyne package -os <linux|windows|macos> -icon Icon.png`
+- Package (DMG/MSI) and release process: Look at the [GitHub Actions file](https://github.com/ilesinge/samples4web/blob/main/.github/workflows/latest_build.yml)
 
 ## Roadmap
 
