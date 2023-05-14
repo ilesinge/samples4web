@@ -11,7 +11,7 @@ It does it by either:
 ## Use
 
 - Download and install the tool for your platform (Linux/MacOS/Windows) from the [release page](https://github.com/ilesinge/samples4web/releases/) 
-  - Caveat: on Windows, the MSI is not signed yet, so it may trigger when installing.
+  - Caveat: on Windows, the MSI is not signed yet, so it may trigger a warning when installing.
 
 - Launch the app
 
